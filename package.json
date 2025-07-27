@@ -1,0 +1,192 @@
+{
+    "name": "gitignore-guard",
+    "displayName": "Gitignore Guard",
+    "description": "Warns you when editing Git-ignored files and optionally makes them read-only to prevent accidental edits",
+    "version": "0.9.0",
+    "publisher": "bulletinmybeard",
+    "engines": {
+        "vscode": "^1.74.0"
+    },
+    "categories": [
+        "Other",
+        "SCM Providers"
+    ],
+    "keywords": [
+        "git",
+        "gitignore",
+        "ignored",
+        "files",
+        "indicator",
+        "warning",
+        "visual",
+        "codelens"
+    ],
+    "license": "MIT",
+    "icon": "icon.png",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bulletinmybeard/vscode-gitignore-guard"
+    },
+    "bugs": {
+        "url": "https://github.com/bulletinmybeard/vscode-gitignore-guard/issues"
+    },
+    "homepage": "https://github.com/bulletinmybeard/vscode-gitignore-guard#readme",
+    "galleryBanner": {
+        "color": "#1e1e1e",
+        "theme": "dark"
+    },
+    "activationEvents": [
+        "onStartupFinished"
+    ],
+    "main": "./dist/extension.js",
+    "contributes": {
+        "commands": [
+            {
+                "command": "gitignoreGuard.checkCurrentFile",
+                "title": "Check if current file is gitignored"
+            },
+            {
+                "command": "gitignoreGuard.showIgnoredFileInfo",
+                "title": "Show gitignore information"
+            },
+            {
+                "command": "gitignoreGuard.toggleExtension",
+                "title": "Gitignore Guard: Toggle On/Off"
+            },
+            {
+                "command": "gitignoreGuard.disableTemporarily",
+                "title": "Gitignore Guard: Disable for 5 minutes"
+            },
+            {
+                "command": "gitignoreGuard.toggleReadOnly",
+                "title": "Gitignore Guard: Toggle Read-Only Mode"
+            },
+            {
+                "command": "gitignoreGuard.addCurrentFileToWhitelist",
+                "title": "Gitignore Guard: Add Current File to Whitelist"
+            }
+        ],
+        "configuration": {
+            "title": "Gitignore Guard",
+            "properties": {
+                "gitignoreGuard.enabled": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Enable/disable the gitignore guard",
+                    "order": 1
+                },
+                "gitignoreGuard.showCodeLens": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show CodeLens indicator above ignored files",
+                    "order": 2
+                },
+                "gitignoreGuard.codeLensMessage": {
+                    "type": "string",
+                    "default": "⚠️  This file is ignored by .gitignore  ⚠️",
+                    "description": "The message to display in the CodeLens",
+                    "order": 3
+                },
+                "gitignoreGuard.showStatusBar": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Show a warning in the status bar for ignored files",
+                    "order": 4
+                },
+                "gitignoreGuard.statusBarMessage": {
+                    "type": "string",
+                    "default": "⚠️  Ignored file",
+                    "description": "Message to display in the status bar for ignored files",
+                    "order": 5
+                },
+                "gitignoreGuard.openAsReadOnly": {
+                    "type": "boolean",
+                    "default": false,
+                    "description": "Open ignored files as read-only to prevent accidental edits",
+                    "order": 6
+                },
+                "gitignoreGuard.readOnlyWhitelist": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [],
+                    "description": "Glob patterns for ignored files that should remain editable even when read-only mode is enabled",
+                    "order": 7
+                },
+                "gitignoreGuard.warningLevels": {
+                    "type": "object",
+                    "default": {
+                        "critical": {
+                            "codeLensMessage": "⚠️ This file is ignored by .gitignore ⚠️",
+                            "statusBarMessage": "⚠️ Ignored file"
+                        },
+                        "moderate": {
+                            "codeLensMessage": "⚠️ This file is ignored by .gitignore ⚠️",
+                            "statusBarMessage": "⚠️ Ignored file"
+                        },
+                        "low": {
+                            "codeLensMessage": "ℹ️ This file is ignored by .gitignore",
+                            "statusBarMessage": "ℹ️ Ignored file"
+                        }
+                    },
+                    "description": "Configure warning messages for different file types",
+                    "order": 8
+                },
+                "gitignoreGuard.criticalFilePatterns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        ".env",
+                        "*.key",
+                        "*.pem",
+                        "**/secrets/*",
+                        "**/.env.*"
+                    ],
+                    "description": "File patterns that should show critical warning level (e.g., files with sensitive data)",
+                    "order": 9
+                },
+                "gitignoreGuard.lowPriorityFilePatterns": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    },
+                    "default": [
+                        "dist/*",
+                        "build/*",
+                        "out/*",
+                        "node_modules/*",
+                        "*.min.js",
+                        "*.min.css"
+                    ],
+                    "description": "File patterns that should show low priority warning level (e.g., generated files)",
+                    "order": 10
+                }
+            }
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "lint": "eslint src --ext ts",
+        "lint:fix": "eslint src --ext ts --fix",
+        "format": "prettier --write \"src/**/*.ts\" \"*.json\" \"*.md\"",
+        "format:check": "prettier --check \"src/**/*.ts\" \"*.json\" \"*.md\""
+    },
+    "devDependencies": {
+        "@types/vscode": "^1.74.0",
+        "@types/node": "16.x",
+        "@typescript-eslint/eslint-plugin": "^5.45.0",
+        "@typescript-eslint/parser": "^5.45.0",
+        "eslint": "^8.28.0",
+        "prettier": "^3.2.4",
+        "typescript": "^4.9.4"
+    },
+    "dependencies": {
+        "simple-git": "^3.20.0",
+        "ignore": "^5.3.0"
+    }
+}

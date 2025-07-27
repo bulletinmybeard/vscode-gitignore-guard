@@ -1,0 +1,15 @@
+# Dependencies
+node_modules/
+
+# Production
+out/
+*.vsix
+
+# VS Code
+.vscode/
+.vscode-test/
+
+# Misc
+package-lock.json
+.DS_Store
+*.log

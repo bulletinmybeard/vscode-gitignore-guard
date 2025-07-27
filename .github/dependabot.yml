@@ -1,0 +1,24 @@
+version: 2
+updates:
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "monthly"
+      day: "monday"
+      time: "03:00"
+    open-pull-requests-limit: 3
+    reviewers:
+      - "bulletinmybeard"
+    labels:
+      - "dependencies"
+      - "automated"
+    commit-message:
+      prefix: "chore"
+      include: "scope"
+    ignore:
+      - dependency-name: "eslint"
+        versions: ["9.x"]
+      - dependency-name: "@typescript-eslint/parser"
+        versions: ["7.x", "8.x"]
+      - dependency-name: "@typescript-eslint/eslint-plugin"
+        versions: ["7.x", "8.x"]
