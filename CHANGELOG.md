@@ -8,9 +8,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [0.9.1-github] - 2025-01-28
 
 ### Fixed
+
 - `CHANGELOG` owner file pattern
 
 ### Added
+
 - Add GitHub PR and ISSUE templates
 
 ## [0.9.0] - 2025-01-26
