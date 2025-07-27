@@ -2,7 +2,7 @@
     "name": "gitignore-guard",
     "displayName": "Gitignore Guard",
     "description": "Warns you when editing Git-ignored files and optionally makes them read-only to prevent accidental edits",
-    "version": "0.9.1-github",
+    "version": "0.9.0",
     "publisher": "RobinSchulz",
     "engines": {
         "vscode": "^1.74.0"
