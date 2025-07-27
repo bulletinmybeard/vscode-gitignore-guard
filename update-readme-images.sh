@@ -1,14 +1,14 @@
 #!/bin/bash
 
 # Script to convert between local and remote image paths in README.md
-# Usage: ./update-readme-images.sh [--remote|--local] [--dry-run] [--branch=main]
+# Usage: ./update-readme-images.sh [--remote|--local] [--dry-run] [--branch=master]
 
 set -e
 
 # Default values
 MODE=""
 DRY_RUN=false
-BRANCH="main"
+BRANCH="master"
 BACKUP=true
 
 # Parse arguments
@@ -35,13 +35,13 @@ while [[ $# -gt 0 ]]; do
             shift
             ;;
         -h|--help)
-            echo "Usage: $0 [--remote|--local] [--dry-run] [--branch=main] [--no-backup]"
+            echo "Usage: $0 [--remote|--local] [--dry-run] [--branch=master] [--no-backup]"
             echo ""
             echo "Options:"
             echo "  --remote     Convert relative paths to GitHub raw URLs"
             echo "  --local      Convert GitHub URLs back to relative paths"
             echo "  --dry-run    Preview changes without applying them"
-            echo "  --branch=    Specify branch name (default: main)"
+            echo "  --branch=    Specify branch name (default: master)"
             echo "  --no-backup  Don't create backup file"
             echo ""
             echo "Examples:"

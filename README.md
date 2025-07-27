@@ -10,7 +10,7 @@
 
 See at a glance when you're editing files that Git ignores. Prevent accidental edits to files that won't be tracked!
 
-![Gitignore Guard Overview](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/settings-overview.png)
+![Gitignore Guard Overview](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/settings-overview.png)
 
 ## Why Use This Extension?
 
@@ -57,7 +57,7 @@ When you open any file that Git ignores, you'll see:
 
 A clear yellow warning appears at the top of ignored files. Click it to see which pattern in `.gitignore` matches your file or to open `.gitignore` for editing.
 
-![CodeLens Warning](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/codelens-warning.png)
+![CodeLens Warning](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/codelens-warning.png)
 
 The warning is interactive - click on it to:
 
@@ -65,13 +65,13 @@ The warning is interactive - click on it to:
 - Open the `.gitignore` file directly
 - Get more information about why the file is ignored
 
-![CodeLens Interactive](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/codelens-interactive.png)
+![CodeLens Interactive](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/codelens-interactive.png)
 
 ### 2. Status Bar Indicator
 
 Look at the bottom of VS Code - you'll see "⚠️ Ignored file" when editing ignored files. If multiple ignored files are open, it shows the count.
 
-![Status Bar Indicator](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/status-bar-indicator.png)
+![Status Bar Indicator](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/status-bar-indicator.png)
 
 ### 3. Read-Only Protection (Optional)
 
@@ -79,19 +79,19 @@ Want extra protection? Enable read-only mode to prevent accidental edits to igno
 
 When enabled, ignored files show a lock icon in their tab:
 
-![Read-only tabs with lock icon](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/readonly-tabs-locked.png)
+![Read-only tabs with lock icon](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/readonly-tabs-locked.png)
 
 The status bar shows when a file is read-only:
 
-![Read-only status bar](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/readonly-status-bar.png)
+![Read-only status bar](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/readonly-status-bar.png)
 
 Trying to edit a read-only file shows this message:
 
-![Read-only edit blocked](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/readonly-edit-blocked.png)
+![Read-only edit blocked](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/readonly-edit-blocked.png)
 
 Need to make a quick edit? Click "Click here" for temporary write access:
 
-![Temporary write access](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/readonly-temp-access.png)
+![Temporary write access](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/readonly-temp-access.png)
 
 Once you have temporary access, you can edit the file normally (notice "John Doe..." being typed). The file becomes read-only again when you close and reopen it.
 
@@ -103,7 +103,7 @@ Once you have temporary access, you can edit the file normally (notice "John Doe
 
 Access settings through `File → Preferences → Settings` (or `Code → Preferences → Settings` on Mac), then search for "gitignore guard".
 
-![Extension Settings](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/main/images/settings-panel.png)
+![Extension Settings](https://raw.githubusercontent.com/bulletinmybeard/vscode-gitignore-guard/master/images/settings-panel.png)
 
 **What you can customize:**
 
